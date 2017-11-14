@@ -1,103 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link rel="icon" href="">
-  <title>FCVH</title>
-  <link rel="stylesheet" href="css/stilo.css">
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-  <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js" > </script>
-  <script src="https://code.angularjs.org/1.6.6/angular-route.min.js"></script>
-  <script src="js/rutas.js"></script>
 
-  <body ng-app="fcvhapp" onload="start()">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="img/icono.ico">
+        <title>FCVH - SITIO OFICIAL</title>
+        <link rel="stylesheet" href="css/stilo.css">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 
-    <!--BARRA DE NAVEGACION-->
-    <nav ng-controller="MenuCtrl" class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
-      <a class="navbar-brand" href="#">F.C.V.H.</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+    </head>
+    <body ng-app="fcvhapp" onload="start()">
 
-          <li ng-repeat="item in items" ng-if="item.inmenu" class="nav-item"><a class="nav-link" href="#{{item.route}}">{{item.title}}</a></li>
+        <!--BARRA DE NAVEGACION-->
+        <nav ng-controller="MenuCtrl" class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">F.C.V.H.</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <!--NG-REPEAT PARA MENU DE NAVEGACION-->
+                    <li ng-repeat="item in items" ng-if="item.inmenu" class="nav-item"><a class="nav-link" href="#{{item.route}}">{{item.title}}</a></li>
 
-        </ul>
-        <hr class="md-hidden">
-        <ul class="nav navbar-nav navbar-right">
-          <li class="nav-item"><a class="nav-link" href="#login" data-toggle="modal" data-target="#myModal">INGRESAR</a></li>
-          <div id="myModal" class="modal fade" role="dialog">
-            <div class="modal-dialog modal-lg">
-
-              <!-- Modal content-->
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h4 class="modal-title">REGISTRATE</h4>
-                </div>
-                <div class="modal-body">
-                  <form>
-                    <div class="form-group">
-                      <label for="email">Email:</label>
-                      <input type="email" class="form-control" id="email">
-                    </div>
-                    <div class="form-group">
-                      <label for="pwd">Contraseña:</label>
-                      <input type="password" class="form-control" id="pwd">
-                    </div>
-                    <button type="submit" class="btn btn-default">Ingresar</button>
-                  </form>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Salir</button>
-                </div>
-              </div>
-
+                </ul>
+                <hr class="md-hidden">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="nav-item"><a class="nav-link" href="#login">REGISTRATE</a></li>
+                </ul>
             </div>
-          </div>
-          <li class="nav-item"><a class="nav-link" href="#registrar">REGISTRATE</a></li>
-        </ul>
-      </div>
-    </nav>
-    <!-- CABECERA DE LA PAGINA-->
+        </nav>
 
-    <!--CONTENEDORA-->
-    <div ng-view></div>
-  </div>
-  <!-- /.container -->
-  <!--FOOTER-->
-  <div ng-include src="'template/pie.html'"></div>
+        <!-- CABECERA DE LA PAGINA-->
+        <div class="jumbotron">
+            <div class="container-fluid text-center">
+                <h4 class="display-4"><strong>SITIO WEB OFICIAL</strong></h4>
+                <img class="rounded img-fluid inline-block" src="img/escudo-viejo.jpg">
+                <img class="rounded img-fluid" src="img/escudo2.png">
+            </div>
+        </div>
 
+        <div class="container">
+            <!--CONTENEDORA   NG-VIEW-->
+            <div ng-view></div>
 
+        </div>        
+        <!-- /.container -->
+        <!--FOOTER-->
+        <div ng-include src="'template/pie.html'"></div>
 
-  <!-- Bootstrap core JavaScript
-  ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  <script>
-  (function() {
-    'use strict'
+        <!-- Bootstrap core JavaScript
+================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <!--ANGULAR Y JS-->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js">
+        </script>
+        <script src="https://code.angularjs.org/1.6.6/angular-route.min.js"></script>
+        <script src="js/rutas.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script>
+            (function() {
+                'use strict'
 
-    if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
-      var msViewportStyle = document.createElement('style')
-      msViewportStyle.appendChild(
-        document.createTextNode(
-          '@-ms-viewport{width:auto!important}'
-        )
-      )
-      document.head.appendChild(msViewportStyle)
-    }
+                if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+                    var msViewportStyle = document.createElement('style')
+                    msViewportStyle.appendChild(
+                        document.createTextNode(
+                            '@-ms-viewport{width:auto!important}'
+                        )
+                    )
+                    document.head.appendChild(msViewportStyle)
+                }
 
-  }())
-  </script>
-</body>
+            }())
+        </script>
+    </body>
+
 </html>

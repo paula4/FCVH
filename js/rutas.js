@@ -18,15 +18,21 @@ var menu =[
     inmenu:true
   },
   {
+    title:'Tienda',
+    url:'template/shop.html',
+    route:'/shop',
+    inmenu:true
+  },
+  {
     title:'Contacto',
     url:'template/contacto.html',
     route:'/contacto',
     inmenu:true
   },
-  {
-    title:'Tienda',
-    url:'template/shop.html',
-    route:'/shop',
+      {
+    title:'Asociate',
+    url:'template/socio.html',
+    route:'/socio',
     inmenu:true
   },
   {
@@ -52,3 +58,7 @@ function ($routeProvider, $locationProvider) {
 villa.controller('MenuCtrl', ['$scope', function($scope) {
   $scope.items = menu;
 }]);
+
+
+
+
