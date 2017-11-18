@@ -1,0 +1,194 @@
+[
+  {
+  "nombre":"PRIMERA",
+  "tablas":[
+    {
+      "titulo":"PRIMERA",
+      "pos":[{
+          "id" :"1",
+          "equipo": "DMTK",
+          "ptos": 22,
+          "pg":7,
+          "pe":1,
+          "pp":2
+        },
+        {
+          "id" :"2",
+          "equipo": "CDYCDC",
+          "ptos": 18,
+          "pg":5,
+          "pe":3,
+          "pp":2
+        },
+        {
+          "id" :"3",
+          "equipo": "CAT",
+          "ptos": 18,
+          "pg":6,
+          "pe":0,
+          "pp":4
+        },
+        {
+          "id" :"4",
+          "equipo": "CREJ",
+          "ptos": 17,
+          "pg":5,
+          "pe":2,
+          "pp":3
+        }
+        ,
+        {
+            "id" :"5",
+          "equipo": "FCVH",
+          "ptos": 14,
+          "pg":4,
+          "pe":2,
+          "pp":5
+        }
+      ]
+        
+    }
+  ]
+},
+{
+  "nombre":"RESERVA",
+  "tablas":[
+    {
+      "titulo":"RESERVA",
+      "pos":[{
+          "id":"1",
+          "equipo": "CREJ",
+          "ptos": 24,
+          "pg":7,
+          "pe":3,
+          "pp":0
+        },
+        {
+          "id":"2",    
+          "equipo": "DMKT",
+          "ptos": 22,
+          "pg":7,
+          "pe":1,
+          "pp":2
+        },
+        {
+          "id":"3",
+          "equipo": "CAT",
+          "ptos": 21,
+          "pg":7,
+          "pe":0,
+          "pp":3
+        },
+        {
+          "id":"4",
+          "equipo": "CDYCDC",
+          "ptos": 17,
+          "pg":5,
+          "pe":2,
+          "pp":3
+        },
+        {
+          "id":"5",
+          "equipo": "FCVH",
+          "ptos": 16,
+          "pg":5,
+          "pe":1,
+          "pp":4
+        }
+      ]
+    }
+  ]
+},
+{
+  "nombre":"SUB-15",
+  "tablas":[
+    {
+      "titulo":"SUB 15 - ZONA SUR",
+      "pos":[{
+          "id":"1",
+          "equipo": "CAT",
+          "ptos": 20,
+          "pg":6,
+          "pe":2,
+          "pp":2
+        },
+        {
+          "id":"2",
+          "equipo": "FCVH",
+          "ptos": 18,
+          "pg":5,
+          "pe":3,
+          "pp":2
+        },
+        {
+            "id":"3",
+          "equipo": "CSNTP",
+          "ptos": 16,
+          "pg":4,
+          "pe":4,
+          "pp":2
+        },
+        {
+            "id":"4",
+          "equipo": "CAIR",
+          "ptos": 9,
+          "pg":1,
+          "pe":3,
+          "pp":3
+        },
+        {
+          "id":"5",
+          "equipo": "CDJU",
+          "ptos": 8,
+          "pg":1,
+          "pe":4,
+          "pp":4
+        }
+      ]
+    },{
+      "titulo":"SUB 15 - ZONA NORTE",
+      "pos":[{
+          "id":"1",
+          "equipo": "CDYCM",
+          "ptos": 27,
+          "pg":9,
+          "pe":0,
+          "pp":1
+        },
+        {
+            "id":"2",
+          "equipo": "CDYCDC",
+          "ptos": 22,
+          "pg":7,
+          "pe":1,
+          "pp":2
+        },
+        {
+            "id":"3",
+          "equipo": "CCVV",
+          "ptos": 18,
+          "pg":5,
+          "pe":3,
+          "pp":2
+        },
+        {
+            "id":"4",
+          "equipo": "DMTK",
+          "ptos": 9,
+          "pg":2,
+          "pe":3,
+          "pp":5
+        },
+        {
+        "id":"5",
+          "equipo": "CREJ",
+          "ptos": 9,
+          "pg":1,
+          "pe":4,
+          "pp":4
+        }
+      ]
+    }
+  ]
+}
+]

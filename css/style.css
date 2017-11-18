@@ -1,0 +1,36 @@
+body {
+  padding-top: 3.5rem;
+  background-color: #111;
+}
+.logos{
+  width:90%;
+  max-width:500px;
+}
+.bg-header{
+  background-color: #111111;
+  background: linear-gradient(to bottom, #45484d 0%,#111111 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+.bg-black{
+  background-color: #111111;
+}
+.jumbotron{
+  border-radius: 0;
+}
+.padding{
+  box-sizing: border-box;
+  padding: 2em;
+}
+footer{
+  background-color: #000;
+  margin-top:2em;
+}
+.text-medium{
+  font-size: 1.5em;
+}
+.card-text{
+  white-space:pre-wrap;
+}
+.historia-img img{
+  width: 100%;
+  margin:0.5em 0;
+}

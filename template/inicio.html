@@ -1,55 +1,28 @@
-<div class="row" id="contenido">
-    <div class="col-md-7">
-        <h1><u>ULTIMAS NOTICIAS</u></h1>
-        <h4>TITULO DE LAS NOTICIAS</h4>
-    </div>
-    <div class="col-md-5">
-        <div ng-include src="'template/slider.html'"></div><br>
-            <!--TEMPORIZADOR PARA EL SIGUIENTE PARTIDO-->
-        <div class="timer">
-            <p><u>PROXIMO PARTIDO</u><br>
-                EL VILLA vs ESTRELLAS<br>
-                Estadio: EL BARRIO NORTE</p>
-            <p id="demo"></p>
-            <script>
-                // Set the date we're counting down to
-                var countDownDate = new Date("Nov 12, 2017 15:00:00").getTime();
-
-                // Update the count down every 1 second
-                var x = setInterval(function() {
-
-                    // Get todays date and time
-                    var now = new Date().getTime();
-
-                    // Find the distance between now an the count down date
-                    var distance = countDownDate - now;
-
-                    // Time calculations for days, hours, minutes and seconds
-                    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                    // Output the result in an element with id="demo"
-                    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-                        + minutes + "m " + seconds + "s ";
-
-                    // If the count down is over, write some text 
-                    if (distance < 0) {
-                        clearInterval(x);
-                        document.getElementById("demo").innerHTML = "EXPIRED";
-                    }
-                }, 1000);
-            </script>
+<div class="row" id="contenido"  ng-controller="NoticiasCtrl" >
+  <div class="col-md-7">
+    <h1><u>ULTIMAS NOTICIAS</u></h1>
+    <div ng-repeat="noticia in noticias">
+      <div class="card">
+        <img class="card-img-top" src="{{noticia.img}}" alt="Card image cap">
+        <div class="card-body">
+          <h4 class="card-title">{{noticia.titulo}}</h4>
+          <p class="card-text">{{noticia.contenido}}</p>
         </div>
+        <div class="card-footer">
+          {{noticia.autor}} - {{noticia.fecha}}
+        </div>
+      </div>
+      <hr>
     </div>
-</div>
-
-<section id="sponsor">
-    <ul>
-        <li><img src="img/sponsor/claro.png" alt=""></li>
-        <li><img src="img/sponsor/mani1.png" alt=""></li>
-        <li><img src="img/sponsor/adidas.jpg" alt=""></li>
-        <li><img src="img/sponsor/gatorade.jpg" alt=""></li>
-    </ul>
-</section>
+  </div>
+  <div class="col-md-5">
+    <div ng-include src="'template/slider.html'"></div><br>
+    <!--TEMPORIZADOR PARA EL SIGUIENTE PARTIDO-->
+    <div class="bg-black rounded text-medium text-center text-light padding timer">
+      <p><u>PROXIMO PARTIDO</u><br>
+        ESTRELLAS vs EL VILLA<br>
+        Estadio: ALBO DE JOVITA</p>
+        <p id="counter"></p>
+      </div>
+    </div>
+  </div>

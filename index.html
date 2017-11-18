@@ -1,86 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/jquery-ui.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-app="fcvhapp">
+  <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+    <a class="navbar-brand" href="#">F.C.V.H.</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div ng-controller="MenuCtrl" class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active ">
+          <li ng-repeat="item in items" ng-if="item.inmenu && item.pos == 'left'" class="text-uppercase nav-item"><a class="nav-link" ng-click="bajar(item.route)">{{item.title}}</a></li>
+        </li>
+      </ul>
+      <ul class="navbar-nav my-2 my-lg-0">
+        <li class="nav-item active">
+          <li ng-repeat="item in items" ng-if="item.inmenu && item.pos == 'right'" class="text-uppercase nav-item"><a class="nav-link" ng-click="bajar(item.route)">{{item.title}}</a></li>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <main role="main">
+    <div class="jumbotron bg-header text-light text-center">
+      <div class="container">
+        <h1 class="display-3">SITIO WEB OFICIAL</h1>
+        <img src="img/logos.png" class="logos">
+      </div>
+    </div>
+    <div id="page"class="container bg-white padding rounded">
+      <ng-view></ng-view>
+      <hr>
+    </div>
+  </main>
+  <div ng-include src="'template/pie.html'"></div>
+  <script src="js/angular.min.js" charset="utf-8"></script>
+  <script src="js/angular-route.min.js" charset="utf-8"></script>
+  <script src="js/jquery-3.2.1.min.js" charset="utf-8"></script>
+  <script src="js/jquery-ui.min.js" charset="utf-8"></script>
+  <script src="js/popper.min.js" ></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/app.js" charset="utf-8"></script>
+  <script>window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <link rel="icon" href="img/icono.ico">
-        <title>FCVH - SITIO OFICIAL</title>
-        <link rel="stylesheet" href="css/stilo.css">
-        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-        <!-- Bootstrap core CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    t._e = [];
+    t.ready = function(f) {
+      t._e.push(f);
+    };
 
-    </head>
-    <body ng-app="fcvhapp" onload="start()">
-
-        <!--BARRA DE NAVEGACION-->
-        <nav ng-controller="MenuCtrl" class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">F.C.V.H.</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <!--NG-REPEAT PARA MENU DE NAVEGACION-->
-                    <li ng-repeat="item in items" ng-if="item.inmenu" class="nav-item"><a class="nav-link" href="#{{item.route}}">{{item.title}}</a></li>
-
-                </ul>
-                <hr class="md-hidden">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="nav-item"><a class="nav-link" href="#login">REGISTRATE</a></li>
-                </ul>
-            </div>
-        </nav>
-
-        <!-- CABECERA DE LA PAGINA-->
-        <div class="jumbotron">
-            <div class="container-fluid text-center">
-                <h4 class="display-4"><strong>SITIO WEB OFICIAL</strong></h4>
-                <img class="rounded img-fluid inline-block" src="img/escudo-viejo.jpg">
-                <img class="rounded img-fluid" src="img/escudo2.png">
-            </div>
-        </div>
-
-        <div class="container">
-            <!--CONTENEDORA   NG-VIEW-->
-            <div ng-view></div>
-
-        </div>        
-        <!-- /.container -->
-        <!--FOOTER-->
-        <div ng-include src="'template/pie.html'"></div>
-
-        <!-- Bootstrap core JavaScript
-================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-    <!--ANGULAR Y JS-->
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js">
-        </script>
-        <script src="https://code.angularjs.org/1.6.6/angular-route.min.js"></script>
-        <script src="js/rutas.js"></script>
-        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-        <script>
-            (function() {
-                'use strict'
-
-                if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
-                    var msViewportStyle = document.createElement('style')
-                    msViewportStyle.appendChild(
-                        document.createTextNode(
-                            '@-ms-viewport{width:auto!important}'
-                        )
-                    )
-                    document.head.appendChild(msViewportStyle)
-                }
-
-            }())
-        </script>
-    </body>
-
+    return t;
+  }(document, "script", "twitter-wjs"));</script>
+</body>
 </html>
