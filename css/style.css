@@ -34,3 +34,10 @@ footer{
   width: 100%;
   margin:0.5em 0;
 }
+thead{
+  color:#ffcb00;
+}
+thead th{
+  background-color: #111;
+}
+/* Admin */

@@ -2,56 +2,63 @@
 var menu =[
   {
     title:'Inicio',
-    url:'template/inicio.html',
+    url:'admin/inicio.html',
     route:'/',
     inmenu:true,
     pos:"left"
   },
   {
-    title:'Historia',
-    url:'template/historia.html',
-    route:'/historia',
-    inmenu:true,
-    pos:"left"
-  },
-  {
-    title:'Pasión',
-    url:'template/pasion.html',
-    route:'/pasion',
-    inmenu:true,
-    pos:"left"
-  },
-  {
-    title:'Tienda',
-    url:'template/shop.html',
-    route:'/shop',
-    inmenu:true,
-    pos:"left"
-  },
-  {
-    title:'Contacto',
-    url:'template/contacto.html',
-    route:'/contacto',
-    inmenu:true,
-    pos:"left"
-  },
-  {
-    title:'Asociate',
-    url:'template/socio.html',
+    title:'Socios',
+    url:'admin/socio.html',
     route:'/socio',
     inmenu:true,
     pos:"left"
   },
   {
-    title:'Iniciar Sesion',
-    url:'template/login.html',
+    title:'Tienda',
+    url:'admin/tienda.html',
+    route:'/tienda',
+    inmenu:true,
+    pos:"left"
+  },
+  {
+    title:'Proximo Partido',
+    url:'admin/proximo.html',
+    route:'/proximo',
+    inmenu:true,
+    pos:"left"
+  },
+  {
+    title:'Tabla de posiciones',
+    url:'admin/tabla.html',
+    route:'/tabla',
+    inmenu:true,
+    pos:"left"
+  },
+  {
+    title:'Noticias',
+    url:'admin/noticias.html',
+    route:'/noticias',
+    inmenu:true,
+    pos:"left"
+  },
+  {
+    title:'Configuración',
+    url:'admin/config.html',
+    route:'/config',
+    inmenu:true,
+    pos:"left"
+  },
+  {
+    title:'Cerrar Sesión',
+    url:'admin/login.html',
     route:'/login',
     inmenu:true,
     pos:"right"
   },
   {
     title:'404',
-    url:'template/404.html',
+    url:'admin/404.html',
     route:'/404',
     inmenu:false
   }];
@@ -116,8 +123,8 @@ var menu =[
       var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      document.getElementById("counter").innerHTML = days + "D " + hours + "H "
-      + minutes + "M " + seconds + "S ";
+      document.getElementById("counter").innerHTML = days + "d " + hours + "h "
+      + minutes + "m " + seconds + "s ";
       if (distance < 0) {
         clearInterval(x);
         document.getElementById("counter").innerHTML = "EXPIRED";
